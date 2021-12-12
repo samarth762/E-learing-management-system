@@ -1,0 +1,37 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+Already have courses.. 
+{% endblock title %}
+
+{% block body %}
+<br><br>
+<div>
+    <div class="container">
+        <div>
+            <h3 style="font-family:'Courier New'"><b><u>MY COURSES</u> ::</b></h3>
+        </div>
+        <div>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">COURSE NAME</th>
+                        <th scope="col">UNIVERSITY NAME</th>
+                        <th scope="col">INSTRUCTOR NAME</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    {% for post in stu4 %}
+                    <tr>
+                        <td>{{post.course_name}}</td>
+                        <td>{{post.university_name}}</td>
+                        <td>{{post.instructor_username}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>   
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

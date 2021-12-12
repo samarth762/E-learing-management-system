@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block title %}
+SignIn Student
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-3">
+<div class="row">
+<div class="col-md-4">
+</div>
+<div class="col-md-4 jumbotron">
+<h3 class="text-center">Student</h3>
+<h5 class="text-center">SignIn</h5>
+
+    <form action="/signinStudent" method="post">
+    <div class="mb-3">
+        <label for="SSIusername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="SSIusername" name="SSIusername" required>
+    </div>
+    <div class="mb-3">
+        <label for="SSIpass" class="form-label">Password</label>
+        <input type="password" class="form-control" id="SSIpass" name="SSIpass" required>
+    </div>
+    <button type="submit" class="btn btn-success btn-sm btn-block">SignIn</button>
+    <small class="form-text text-muted">Not a member?<a href="/signupStudent"> Signup Now</a></small>
+    </form>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+
+
+{% endblock body %}

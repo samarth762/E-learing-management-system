@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+SIGN PAGE    
+{% endblock title %}
+
+{% block body %}
+<br>
+
+<div class="container">
+    <h1 style="font-family: Georgia, serif">FEEDBACK</h1>
+
+        {% for post in p2 %}
+        <div class="card">
+            <h5 class="card-header">@&ensp;{{post.name}}</h5>
+            <div class="card-body">
+                <p class="card-text">&emsp;&#x25C8;&emsp;{{post.comment}}</p>
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    
+</div>
+
+{% endblock body %}

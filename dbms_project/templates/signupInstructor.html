@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block title %}
+SignUp Instructor
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-3">
+<div class="row">
+<div class="col-md-4">
+</div>
+<div class="col-md-4 jumbotron">
+<h3 class="text-center">Instructor</h3>
+<h5 class="text-center">SignUp</h5>
+    <form action="/signupInstructor" method="POST">
+    <div class="mb-3">
+        <label for="ISUname" class="form-label">Name</label>
+        <input type="text" class="form-control" id="ISUname" name="ISUname" required>
+    </div>
+    <div class="mb-3">
+        <label for="ISUemail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="ISUemail" name="ISUemail" required>
+    </div>
+    <div class="mb-3">
+        <label for="ISUusername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="ISUusername" name="ISUusername" required>
+    </div>
+    <div class="mb-3">
+        <label for="ISUpass" class="form-label">Password</label>
+        <input type="password" class="form-control" id="ISUpass" name="ISUpass" required>
+    </div>
+    <button type="submit" class="btn btn-info btn-sm btn-block">SignUp</button>
+    <small class="form-text text-muted">Already a member?<a href="/signinInstructor"> SignIn Now</a></small>
+    </form>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+
+
+{% endblock body %}

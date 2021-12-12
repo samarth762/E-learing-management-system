@@ -1,0 +1,37 @@
+{% extends 'base3.html' %}
+
+{% block title %}
+Instructor
+{% endblock title %}
+
+{% block body %}
+<br>
+<div >
+    <h1>Hi  {{current_user.name}}, Welcome to Our Site...</h1>
+</div>
+<br><br>
+<div class="container mt-5">
+<div class="row">
+<div class="col-md-4">
+</div>
+<div class="col-md-4 jumbotron">
+<h3 class="text-center">Course Details</h3><br>
+    <form action="/instructor1" method="post">
+    <input type="text" class="form-control" id="insUsername" name="insUsername" value={{current_user.username}} required><br>
+    <input type="text" class="form-control" id="insCoursename" name="insCoursename" placeholder="course name(unique)" required><br>
+    <input type="text" class="form-control" id="insDuration" name="insDuration" placeholder="duration" required><br>
+    <input type="number" class="form-control" id="insDifficulty" name="insDifficulty" placeholder="difficulty" required><br>
+    <input type="number" class="form-control" id="insFee" name="insFee" placeholder="fee" required><br>
+    <input type="text" class="form-control" id="insUniversityname" name="insUniversityname" placeholder="university name" required><br>    
+    <br>
+    <button type="submit" class="btn btn-success btn-sm btn-block">Done</button>
+    </form>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+
+
+
+{% endblock body %}

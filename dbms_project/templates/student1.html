@@ -1,0 +1,57 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+Student   
+{% endblock title %}
+
+{% block body %}
+<br>
+<div >
+    <h1>Hi  {{current_user.name}}, Welcome to Our Site...</h1>
+</div>
+<br><br>
+<div class="container">
+    <hr style="height:6px;border-width:0;color:gray;background-color:gray">
+    <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+    <h2 style="font-family: Georgia, serif"><b>Courses Details</b> ::</h2>
+    <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+    <br><div class="card-deck">
+        {% for post in stu1 %}
+        <div class="card" style="min-width: 15rem; max-width: 15rem; margin-top: 3px;">
+            <div class="card-body">
+                <h3>{{post.course_name}}</h3>
+            </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h5 style="font-family:Times New Roman">Instructor Name:</h5>{{post.name}}</li>
+                <li class="list-group-item"><h5 style="font-family:Times New Roman">University Name:</h5>{{post.university_name}}</li>
+                <li class="list-group-item"><h5 style="font-family:Times New Roman">Duration:</h5>{{post.duration}}</li>
+                <li class="list-group-item"><h5 style="font-family:Times New Roman">Difficulty Level:</h5>{{post.difficulty}}</li>
+                <li class="list-group-item"><h5 style="font-family:Times New Roman">Fee:</h5>{{post.fee}}</li>
+            </ul>
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+    <hr style="height:6px;border-width:0;color:gray;background-color:gray">
+</div>
+<br>
+
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+</div>
+<div class="col-md-4 jumbotron">
+<h3 class="text-center">Course Enroll From</h3><br>
+    <form action="/student1" method="post">
+    <input type="text" class="form-control" id="Studentname" name="Studentname" value={{current_user.name}}   required><br>
+    <input type="text" class="form-control" id="Coursename" name="Coursename" placeholder="Course Name"   required><br>
+    <br>
+    <button type="submit" class="btn btn-success btn-sm btn-block">Done</button>
+    </form>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+
+{% endblock body %}

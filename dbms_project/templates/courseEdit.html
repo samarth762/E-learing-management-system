@@ -1,0 +1,31 @@
+{% extends 'base3.html' %}
+
+{% block title %}
+Edit Course Details
+{% endblock title %}
+
+{% block body %}
+
+<div class="container mt-5">
+<div class="row">
+<div class="col-md-4">
+</div>
+<div class="col-md-4 jumbotron">
+<h3 class="text-center">Update Course Details</h3><br>
+    <form action="/courseEdit/{{posts.cid}}" method="post">
+    <input type="text" class="form-control" id="Coursename" name="Coursename" placeholder="course name"  required><br>
+    <input type="text" class="form-control" id="Duration" name="Duration" placeholder="duration" required><br>
+    <input type="number" class="form-control" id="Difficulty" name="Difficulty" placeholder="difficulty" required><br>
+    <input type="number" class="form-control" id="Fee" name="Fee" placeholder="fee" required><br>
+    <input type="text" class="form-control" id="Universityname" name="Universityname" placeholder="university name" required><br>    
+    <br>
+    <button type="submit" class="btn btn-success btn-sm btn-block">Done</button>
+    </form>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+
+
+{% endblock body %}

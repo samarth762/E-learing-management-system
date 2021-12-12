@@ -1,0 +1,46 @@
+{% extends 'base3.html' %}
+
+{% block title %}
+Instructor
+{% endblock title %}
+
+{% block body %}
+
+
+<div>
+    <div class="container">
+        <div>
+            <h3 style="font-family:'Courier New'"><b><u>Courses Details</u> ::</b></h3>
+        </div>
+        <div>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">COURSE NAME</th>
+                        <th scope="col">UNIVERSITY NAME</th>
+                        <th scope="col">DIFFICULTY</th>
+                        <th scope="col">FEE</th>
+                        <th scope="col">DURATION</th>
+                        <th scope="col">EDIT</th>
+                        <th scope="col">DELETE</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    {% for post in query %}
+                    <tr>
+                        <td>{{post.course_name}}</td>
+                        <td>{{post.university_name}}</td>
+                        <td>{{post.difficulty}}</td>
+                        <td>{{post.fee}}</td>
+                        <td>{{post.duration}}</td>
+                        <td><a href="/courseEdit/{{post.cid}}"><button class="btn btn-primary">Edit </button> </a> </td>
+                        <td><a href="/deleteCourse/{{post.cid}}"><button onclick="return confirm('Are you sure to Delete data');" class="btn btn-danger">Delete </button> </a> </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>   
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
